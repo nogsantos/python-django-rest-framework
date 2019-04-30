@@ -5,12 +5,14 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 django = "*"
 djangorestframework = "*"
 python-decouple = "*"
 pygments = "*"
+pylint-django = "*"
 
 [requires]
 python_version = "3.7"
