@@ -16,7 +16,6 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework import routers
 from quickstart import views
-from snippets import urls
 
 ROUTER = routers.DefaultRouter()
 ROUTER.register(r'users', views.UserViewSet)
@@ -27,6 +26,6 @@ ROUTER.register(r'permissions', views.PermissionsViewSet)
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     path('', include(ROUTER.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('snippets/', include(snippets.urls, namespace='snippets'))
+    path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
+    path(r'snippets', include('snippets.urls'))
 ]
